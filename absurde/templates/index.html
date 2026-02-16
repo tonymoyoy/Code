@@ -529,11 +529,23 @@
             </div>
           </div>
 
+          <div class="endpoint">
+            <div>
+              <div style="font-weight:700">[ ZODIAC FORTUNE ] SIGN & NUMBER</div>
+              <div class="path">/api/zodiac_fortune</div>
+              <div class="meta">RANDOM ZODIAC SIGN + NUMBER [0-9999]</div>
+            </div>
+            <div>
+              <button data-endpoint="/api/zodiac_fortune">EXECUTE</button>
+            </div>
+          </div>
+
           <pre id="out-tris" style="display:none"></pre>
           <pre id="out-chispazo" style="display:none"></pre>
           <pre id="out-gana_gato" style="display:none"></pre>
           <pre id="out-sorteo_mayor" style="display:none"></pre>
           <pre id="out-sorteo_superior" style="display:none"></pre>
+          <pre id="out-zodiac_fortune" style="display:none"></pre>
         </section>
 
         <section class="card">
@@ -546,6 +558,7 @@
             <a href="/api/gana_gato" target="_blank">/api/gana_gato</a>
             <a href="/api/sorteo_mayor" target="_blank">/api/sorteo_mayor</a>
             <a href="/api/sorteo_superior" target="_blank">/api/sorteo_superior</a>
+            <a href="/api/zodiac_fortune" target="_blank">/api/zodiac_fortune</a>
           </div>
 
           <div class="meta" style="margin-top:24px">COMMAND LINE INTERFACE</div>
@@ -553,7 +566,8 @@
 curl http://127.0.0.1:5000/api/chispazo
 curl http://127.0.0.1:5000/api/gana_gato
 curl http://127.0.0.1:5000/api/sorteo_mayor
-curl http://127.0.0.1:5000/api/sorteo_superior</pre>
+curl http://127.0.0.1:5000/api/sorteo_superior
+curl http://127.0.0.1:5000/api/zodiac_fortune</pre>
         </section>
       </div>
     </main>
@@ -584,7 +598,7 @@ curl http://127.0.0.1:5000/api/sorteo_superior</pre>
           const ep = btn.getAttribute('data-endpoint');
           btn.disabled = true;
           btn.textContent = 'PROCESSING...';
-          const id = ep.includes('tris') ? 'out-tris' : ep.includes('chispazo') ? 'out-chispazo' : ep.includes('gana_gato') ? 'out-gana_gato' : ep.includes('sorteo_mayor') ? 'out-sorteo_mayor' : 'out-sorteo_superior';
+          const id = ep.includes('tris') ? 'out-tris' : ep.includes('chispazo') ? 'out-chispazo' : ep.includes('gana_gato') ? 'out-gana_gato' : ep.includes('sorteo_mayor') && !ep.includes('superior') ? 'out-sorteo_mayor' : ep.includes('sorteo_superior') ? 'out-sorteo_superior' : 'out-zodiac_fortune';
           try {
             const res = await fetch(ep);
             const json = await res.json();

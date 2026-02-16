@@ -63,5 +63,23 @@ def Sorteo_Superior():
 
     return jsonify(data)
 
+@app.route('/api/zodiac_fortune')
+def Zodiac_Fortune():
+    # List of zodiac signs
+    zodiac_signs = ['Aries', 'Taurus', 'Gemini', 'Cancer', 'Leo', 'Virgo', 
+                    'Libra', 'Scorpio', 'Sagittarius', 'Capricorn', 'Aquarius', 'Pisces']
+    
+    # Pick a random zodiac sign and a random number between 0 and 9999
+    data = {
+        'zodiac_sign': random.choice(zodiac_signs),
+        'fortune_number': random.randint(0, 9999)
+    }
+
+    accepts = request.accept_mimetypes
+    if accepts['text/html'] > accepts['application/json']:
+        return render_template('result.html', endpoint='/api/zodiac_fortune', data=data)
+
+    return jsonify(data)
+
 if __name__ == '__main__':
     app.run(debug=True)
