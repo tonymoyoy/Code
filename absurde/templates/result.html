@@ -24,11 +24,16 @@
       <div class="meta">This is a human-friendly view of the response. Use the raw API for programmatic access.</div>
 
       {% if data.zodiac_sign is defined %}
-        <div style="display:flex;flex-direction:column;gap:8px">
-          <div class="meta">Zodiac Sign</div>
-          <div style="font-size:34px;font-weight:800;color:#0b1220">{{ data.zodiac_sign }}</div>
-          <div class="meta">Fortune Number</div>
-          <div class="value" style="font-size:36px;color:#0b5fff">{{ data.fortune_number }}</div>
+        <div style="display:flex;align-items:center;gap:16px">
+          <div style="width:72px;height:72px;flex:0 0 72px">
+            <img src="{{ url_for('static', filename='zodiac/' + data.zodiac_sign.lower() + '.svg') }}" alt="{{ data.zodiac_sign }}" style="width:64px;height:64px;display:block;margin:0 auto"/>
+          </div>
+          <div style="display:flex;flex-direction:column;gap:6px">
+            <div class="meta">Zodiac Sign</div>
+            <div style="font-size:28px;font-weight:800;color:#0b1220">{{ data.zodiac_sign }}</div>
+            <div class="meta">Fortune Number</div>
+            <div class="value" style="font-size:32px;color:#0b5fff">{{ data.fortune_number }}</div>
+          </div>
         </div>
       {% elif data.number is defined %}
         <div class="value">{{ data.number }}</div>
