@@ -41,5 +41,27 @@ def gana_gato():
 
     return jsonify(data)
 
+@app.route('/api/sorteo_mayor')
+def Sorteo_Mayor():
+    # Generate a random number between 0 and 60000 (inclusive)
+    data = {'number': random.randint(0, 60000)}
+
+    accepts = request.accept_mimetypes
+    if accepts['text/html'] > accepts['application/json']:
+        return render_template('result.html', endpoint='/api/sorteo_mayor', data=data)
+
+    return jsonify(data)
+
+@app.route('/api/sorteo_superior')
+def Sorteo_Superior():
+    # Generate a random number between 1 and 60000 (inclusive)
+    data = {'number': random.randint(1, 60000)}
+
+    accepts = request.accept_mimetypes
+    if accepts['text/html'] > accepts['application/json']:
+        return render_template('result.html', endpoint='/api/sorteo_superior', data=data)
+
+    return jsonify(data)
+
 if __name__ == '__main__':
     app.run(debug=True)
