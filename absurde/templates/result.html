@@ -24,9 +24,9 @@
       <div class="meta">This is a human-friendly view of the response. Use the raw API for programmatic access.</div>
 
       {% if data.zodiac_sign is defined %}
-        <div style="display:flex;align-items:center;gap:16px">
-          <div style="width:72px;height:72px;flex:0 0 72px">
-            <img src="{{ url_for('static', filename='zodiac/' + data.zodiac_sign.lower() + '.svg') }}" alt="{{ data.zodiac_sign }}" style="width:64px;height:64px;display:block;margin:0 auto"/>
+        <div style="display:flex;align-items:center;gap:24px;padding:20px 0">
+          <div style="flex:0 0 140px">
+            <img src="{{ url_for('static', filename='zodiac/' + data.zodiac_sign.lower() + '.svg') }}" alt="{{ data.zodiac_sign }}" style="width:128px;height:128px;display:block"/>
           </div>
           <div style="display:flex;flex-direction:column;gap:6px">
             <div class="meta">Zodiac Sign</div>

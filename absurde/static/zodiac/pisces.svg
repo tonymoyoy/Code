@@ -1,3 +1,34 @@
-<svg xmlns="http://www.w3.org/2000/svg" width="64" height="64" viewBox="0 0 64 64">
-  <text x="50%" y="50%" dominant-baseline="middle" text-anchor="middle" font-size="32" fill="#0b1220">♓</text>
+<svg xmlns="http://www.w3.org/2000/svg" width="128" height="128" viewBox="0 0 128 128">
+  <defs>
+    <linearGradient id="bgGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#1a1a2e;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#16213e;stop-opacity:1" />
+    </linearGradient>
+  </defs>
+  <rect width="128" height="128" fill="url(#bgGrad)"/>
+  <circle cx="64" cy="64" r="60" fill="none" stroke="#ffffff" stroke-width="2" opacity="0.3"/>
+  <!-- Two fish connected by cord -->
+  <!-- Left fish head -->
+  <circle cx="40" cy="45" r="3" fill="#ffd700"/>
+  <!-- Left fish body -->
+  <circle cx="45" cy="60" r="3" fill="#ffed4e"/>
+  <!-- Left fish tail -->
+  <circle cx="42" cy="75" r="3" fill="#ffd700"/>
+  <path d="M 45 60 Q 43 70 42 78" fill="none" stroke="#ffd700" stroke-width="2" opacity="0.7"/>
+  <!-- Right fish head -->
+  <circle cx="88" cy="45" r="3" fill="#ffd700"/>
+  <!-- Right fish body -->
+  <circle cx="83" cy="60" r="3" fill="#ffed4e"/>
+  <!-- Right fish tail -->
+  <circle cx="86" cy="75" r="3" fill="#ffd700"/>
+  <path d="M 83 60 Q 85 70 86 78" fill="none" stroke="#ffd700" stroke-width="2" opacity="0.7"/>
+  <!-- Connecting cord -->
+  <line x1="45" y1="60" x2="83" y2="60" stroke="#ffd700" stroke-width="1.5" opacity="0.6" stroke-dasharray="3,3"/>
+  <!-- Linking knot -->
+  <circle cx="64" cy="60" r="2.5" fill="#ffed4e"/>
+  <!-- Fish heads -->
+  <line x1="40" y1="45" x2="45" y2="60" stroke="#ffd700" stroke-width="1.5" opacity="0.6"/>
+  <line x1="88" y1="45" x2="83" y2="60" stroke="#ffd700" stroke-width="1.5" opacity="0.6"/>
+  <!-- Pisces symbol -->
+  <text x="64" y="118" font-size="32" font-weight="bold" text-anchor="middle" fill="#ffd700">♓</text>
 </svg>
