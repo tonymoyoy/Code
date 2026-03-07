@@ -4,12 +4,12 @@ This small Flask application exposes a handful of HTTP endpoints that generate r
 
 ## Available Endpoints
 
-- **`/api/tris`** – returns a single integer between 0 and 99 999.
+- **`/api/tris`** – returns a single integer between 0 and 99,999.
 - **`/api/chispazo`** – returns an ordered list of 5 numbers between 1 and 28.
 - **`/api/gana_gato`** – returns a list of eight integers between 1 and 5 (inclusive).
-- **`/api/sorteo_mayor`** – returns a single integer between 0 and 60 000.
-- **`/api/sorteo_superior`** – returns a single integer between 1 and 60 000.
-- **`/api/zodiac_fortune`** – returns a randomly chosen zodiac sign and a number between 0 and 9 999.
+- **`/api/sorteo_mayor`** – returns a single integer between 0 and 60,000.
+- **`/api/sorteo_superior`** – returns a single integer between 1 and 60,000.
+- **`/api/zodiac_fortune`** – returns a randomly chosen zodiac sign and a number between 0 and 9999.
 
 When accessed from a browser, the endpoints render a simple HTML page (using the templates in `templates/`). Otherwise, they respond with JSON suitable for API clients.
 
